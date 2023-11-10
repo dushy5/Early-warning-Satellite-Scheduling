@@ -3,9 +3,35 @@ import time
 import numpy as np
 from utils import *
 
+#参数
+def parse_args(**kwargs):
+    options = {
+        # GA参数
+        "chrom_size":200,   #染色体种群
+        "max_gen":100,      #最大代数
+        "cr":0.7,           #交叉概率
+        "mr":0.1,           #变异概率
+
+        # 路径参数
+        "data_path":"datasets" #数据位置
+
+        # 卫星参数
+        # ...
+    }
+    for key, value in kwargs.items():
+        options[key] = value
+
+    return options
+
+
 def main():
+    
+    # 参数打包
+    opt = parse_args()
+
+
     # 获取数据
-    data = get_data(parse_args())
+    data = get_data(opt)
 
 
     # 卫星字典
