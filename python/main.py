@@ -3,6 +3,8 @@ import time
 import numpy as np
 from utils import *
 
+os.chdir('python')
+
 #参数
 def parse_args(**kwargs):
     options = {
